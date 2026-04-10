@@ -1,9 +1,5 @@
 // ============================================================
-// BUSINESS DATA — Claude fills this in for each client
-// RULES:
-// - Only use data explicitly provided by the client
-// - Never fabricate stats, testimonials, credentials, or locations
-// - Leave arrays empty ([]) if no real data exists — components handle gracefully
+// BUSINESS DATA — Cesar Lawns Services, Porirua NZ
 // ============================================================
 
 export interface BusinessData {
@@ -20,19 +16,18 @@ export interface BusinessData {
   bookingUrl?: string
 
   hero: {
-    headline: string        // Must contain primary service + location keyword
+    headline: string
     subheadline: string
     ctaPrimary: string
     ctaSecondary: string
-    badge?: string          // Only if client has real social proof
-    cyclingWords: string[]  // 3 words that rotate in the headline animation
+    badge?: string
+    cyclingWords: string[]
   }
 
-  // ONLY real client data — leave empty if unknown
   stats: Array<{ value: string; label: string }>
 
   services: Array<{
-    icon: string            // Lucide icon name
+    icon: string
     title: string
     description: string
   }>
@@ -49,7 +44,6 @@ export interface BusinessData {
     description: string
   }>
 
-  // ONLY real testimonials provided by client — never write fake ones
   testimonials: Array<{
     name: string
     location: string
@@ -60,9 +54,9 @@ export interface BusinessData {
   serviceAreas: string[]
 
   design: {
-    primaryColor: string    // Dark tone for hero/sections bg
+    primaryColor: string
     secondaryColor: string
-    ctaColor: string        // Accent — must pop
+    ctaColor: string
     headingFont: string
     bodyFont: string
     googleFontsUrl: string
@@ -78,73 +72,128 @@ export interface BusinessData {
   clientName?: string
 }
 
-// ============================================================
-// PLACEHOLDER — Replace ALL values with real client data
-// ============================================================
-
 export const business: BusinessData = {
-  name: "Business Name",
-  slug: "business-slug",
-  tagline: "Short tagline here",
-  description: "One sentence description of the business.",
-  industry: "Industry",
-  location: "City, New Zealand",
+  name: "Cesar's Lawns Services",
+  slug: "cesar-lawns",
+  tagline: "Porirua's lawn and garden crew",
+  description: "Reliable lawn mowing, hedge trimming, weeding, and garden maintenance across Porirua.",
+  industry: "Lawn & Garden Services",
+  location: "Porirua, New Zealand",
 
-  phone: "021 000 0000",
-  email: "hello@example.co.nz",
-  address: "Serving [City], New Zealand",
+  phone: "022 187 2853",
+  email: "cesarslawnsservices@gmail.com",
+  address: "19 Beauzami Crescent, Ascot Park, Porirua 5024",
 
   hero: {
-    headline: "City's [Service] Specialists",
-    subheadline: "Subheadline here — benefit-focused, Kiwi voice, max 2 sentences.",
-    ctaPrimary: "Get a Free Quote",
-    ctaSecondary: "See Our Services",
-    cyclingWords: ["Word One", "Word Two", "Word Three"],
+    headline: "Porirua's Lawn & Garden Crew",
+    subheadline: "We keep your section looking sharp all year round. Free quotes, reliable crew, Porirua only.",
+    ctaPrimary: "Get Your Free Quote",
+    ctaSecondary: "Our Services",
+    badge: "5-Star Rated in Porirua",
+    cyclingWords: ["Lawn Mowing", "Hedge Trimming", "Weeding"],
   },
 
-  stats: [],
+  stats: [
+    { value: "5★", label: "Google Rating" },
+  ],
 
   services: [
-    { icon: "Wrench", title: "Service One", description: "One to two sentences. What the client gets and why it matters." },
-    { icon: "Hammer", title: "Service Two", description: "One to two sentences. What the client gets and why it matters." },
-    { icon: "Home", title: "Service Three", description: "One to two sentences. What the client gets and why it matters." },
-    { icon: "Layers", title: "Service Four", description: "One to two sentences. What the client gets and why it matters." },
-    { icon: "ShieldCheck", title: "Service Five", description: "One to two sentences. What the client gets and why it matters." },
-    { icon: "Sparkles", title: "Service Six", description: "One to two sentences. What the client gets and why it matters." },
+    {
+      icon: "Scissors",
+      title: "Lawn Mowing",
+      description: "Regular mowing that keeps your lawn tidy and healthy. We clear the driveway after every visit.",
+    },
+    {
+      icon: "Leaf",
+      title: "Hedge Trimming",
+      description: "Clean, sharp cuts that keep your hedges looking their best without the hassle.",
+    },
+    {
+      icon: "Shovel",
+      title: "Weeding",
+      description: "Hand weeding and weed spray to keep your garden beds clean and your lawn weed-free.",
+    },
+    {
+      icon: "Spray",
+      title: "Weed Spray",
+      description: "Targeted weed spray treatments for driveways, garden beds, and problem areas.",
+    },
+    {
+      icon: "Trash2",
+      title: "Rubbish Removal",
+      description: "We take away garden waste, clippings, and general rubbish so you don't have to.",
+    },
+    {
+      icon: "MoreHorizontal",
+      title: "And More",
+      description: "Got something else you need sorted in the garden? Just ask — we handle all sorts of outdoor work.",
+    },
   ],
 
   about: {
-    headline: "About headline goes here",
-    body: "About body copy. Straight-talking Kiwi voice. No filler phrases.",
+    headline: "Local Crew, Reliable Service",
+    body: "Cesar and his team have been looking after lawns and gardens across Porirua for years. We show up when we say we will, we work hard, and we leave your place looking great. No messing around. Just call us, we come out, and we get it done.",
     credentials: [],
   },
 
   process: [
-    { step: "01", title: "Step One", description: "Description of step one." },
-    { step: "02", title: "Step Two", description: "Description of step two." },
-    { step: "03", title: "Step Three", description: "Description of step three." },
-    { step: "04", title: "Step Four", description: "Description of step four." },
+    { step: "01", title: "Call or Text", description: "Give us a ring or text on 022 187 2853 and tell us what you need." },
+    { step: "02", title: "Free Quote", description: "We come out, take a look, and give you a fair price — no strings attached." },
+    { step: "03", title: "We Do the Work", description: "Cesar's crew shows up, gets the job done properly, and clears everything away." },
+    { step: "04", title: "You Enjoy It", description: "Sit back and enjoy a clean, tidy section without lifting a finger." },
   ],
 
-  testimonials: [],
-  serviceAreas: [],
+  testimonials: [
+    {
+      name: "Gail Murphy",
+      location: "Porirua",
+      rating: 5,
+      text: "My lawn is mowed by Cesar's team on a regular basis. They also use a leaf blower to clear my driveway. Very happy with their work, would recommend them.",
+    },
+    {
+      name: "Mateo Rendon",
+      location: "Porirua",
+      rating: 5,
+      text: "Cesar and his team are great! Very nice, friendly and amazing work.",
+    },
+    {
+      name: "Mayra Alvarado",
+      location: "Porirua",
+      rating: 5,
+      text: "Excellent service my lawns always looks great.",
+    },
+    {
+      name: "Deacon Fourteen",
+      location: "Porirua",
+      rating: 5,
+      text: "Great service and professional crew.",
+    },
+    {
+      name: "Fernando Sessarego",
+      location: "Porirua",
+      rating: 5,
+      text: "Very efficient team always on time.",
+    },
+  ],
+
+  serviceAreas: ["Porirua"],
 
   design: {
-    primaryColor: "#1C1917",
-    secondaryColor: "#78716C",
-    ctaColor: "#F97316",
-    headingFont: "Plus Jakarta Sans",
-    bodyFont: "Plus Jakarta Sans",
+    primaryColor: "#1C5C37",
+    secondaryColor: "#3DB06B",
+    ctaColor: "#7DC744",
+    headingFont: "Barlow Condensed",
+    bodyFont: "Inter",
     googleFontsUrl:
-      "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap",
+      "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap",
   },
 
   seo: {
-    title: "Service City | Business Name",
-    description: "Service in City. USP. Call 021 000 0000 for a free quote.",
-    keywords: "service city, business name, local service NZ",
+    title: "Lawn Mowing Porirua | Cesar's Lawns Services",
+    description: "Reliable lawn mowing, hedge trimming, weeding and garden services in Porirua. 5-star rated local crew. Call 022 187 2853 for a free quote.",
+    keywords: "lawn mowing porirua, lawn care porirua, hedge trimming porirua, garden services porirua, weed spray porirua, rubbish removal porirua, cesar lawns porirua, lawn mowing ascot park",
   },
 
-  clientEmail: "hello@example.co.nz",
-  clientName: "Client Name",
+  clientEmail: "cesarslawnsservices@gmail.com",
+  clientName: "Cesar",
 }
