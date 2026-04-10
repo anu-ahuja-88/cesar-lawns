@@ -1,0 +1,98 @@
+{
+  "_instructions": "Fill this out in Session 1. Save as mockups/<slug>/design-brief.json. This file drives Sessions 2 and 3 — no skill files needed after this.",
+
+  "slug": "business-slug",
+  "businessName": "Business Name",
+  "industry": "industry",
+  "location": "City, New Zealand",
+
+  "style": {
+    "name": "e.g. Editorial Bold",
+    "description": "One sentence — what makes this style distinct for this client"
+  },
+
+  "palette": {
+    "primary": "#000000",
+    "secondary": "#000000",
+    "cta": "#000000",
+    "background": "#000000",
+    "text": "#000000",
+    "note": "CTA must not be #F97316. Primary must not be #1C1917 unless confirmed from design system."
+  },
+
+  "fonts": {
+    "heading": "Font Name, weight e.g. Playfair Display 800",
+    "body": "Font Name, weight e.g. Inter 400",
+    "googleFontsUrl": "https://fonts.googleapis.com/css2?family=..."
+  },
+
+  "heroLayout": "one of: full-bleed-image | centered-minimal | split-screen-stats | video-background | bold-typographic | before-after-slider",
+  "heroLayoutReason": "One sentence why this layout suits this client",
+
+  "motion": {
+    "personality": "one of: snappy | professional | luxury | playful",
+    "duration": 0.5,
+    "stagger": 0.08,
+    "ease": "[0.22, 1, 0.36, 1]",
+    "springStiffness": 300,
+    "yOffset": 24,
+    "notes": "Any specific motion decisions for this brand"
+  },
+
+  "cardStyle": "one of: dark-elevated | outlined | glassmorphism | flat-light | bordered-minimal",
+  "cardStyleReason": "Why this card style suits the brand",
+
+  "sectionOrder": [
+    "Nav",
+    "Hero",
+    "TrustBar",
+    "Services",
+    "About",
+    "Gallery",
+    "Process",
+    "Testimonials",
+    "QuoteForm",
+    "CTA",
+    "Footer",
+    "FloatingCTA"
+  ],
+
+  "sectionsToSkip": ["e.g. Gallery — no photos provided", "e.g. TrustBar — no real stats"],
+
+  "antiSamenessChecks": [
+    "Specific visual difference 1 from generic dark/orange tradie site",
+    "Specific visual difference 2",
+    "Specific visual difference 3"
+  ],
+
+  "antiPatterns": [
+    "Things to avoid for this industry/style e.g. no glassmorphism, no sans-serif headlines"
+  ],
+
+  "componentNotes": {
+    "Nav": "e.g. dark bg with logo left, phone right, CTA button in brand CTA colour",
+    "Hero": "e.g. split screen — left: headline + stats + spring CTA, right: full-height image. Cycling words: [word1, word2, word3]",
+    "TrustBar": "e.g. 3 stats in a dark band — only if stats data exists",
+    "Services": "e.g. 4-card outlined grid, navy border, no fill, icon top-left in CTA colour",
+    "About": "e.g. two-column, image left, text right, credentials as inline badges",
+    "Gallery": "e.g. masonry grid, hover zoom, before/after slider for reno shots",
+    "Process": "e.g. horizontal numbered steps, connecting line, links to #quote",
+    "Testimonials": "e.g. carousel of 3, returns null if empty",
+    "QuoteForm": "e.g. dark section, minimal fields, no glassmorphism — flat style to match brand",
+    "CTA": "e.g. full-width section, large headline, two buttons side by side",
+    "Footer": "e.g. 3-column: logo+tagline, services list, contact details + service areas",
+    "FloatingCTA": "e.g. scroll-triggered at 500px, phone + quote buttons, AnimatePresence"
+  },
+
+  "21stdevInspirationNotes": "Key patterns found from 21st.dev searches — reference these when building Hero and Services",
+
+  "glassmorphism": false,
+
+  "seo": {
+    "title": "Primary Service City | Business Name",
+    "description": "Max 160 chars. Service + location + USP + soft CTA.",
+    "keywords": "service city, business name, local service NZ"
+  },
+
+  "heroFalAiPrompt": "Only fill if no hero image exists and layout requires one. e.g. 'Auckland plumber working under kitchen sink, natural light, photorealistic, professional'"
+}
