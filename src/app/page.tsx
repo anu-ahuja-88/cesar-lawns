@@ -3,6 +3,7 @@ import Hero from '@/components/Hero'
 import TrustBar from '@/components/TrustBar'
 import Services from '@/components/Services'
 import About from '@/components/About'
+import Gallery from '@/components/Gallery'
 import Process from '@/components/Process'
 import Testimonials from '@/components/Testimonials'
 import QuoteForm from '@/components/QuoteForm'
@@ -18,6 +19,7 @@ export default function Home() {
       <TrustBar />
       <Services />
       <About />
+      <Gallery />
       <Process />
       <Testimonials />
       <QuoteForm />

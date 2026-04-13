@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Phone, Menu, X } from 'lucide-react'
+import Image from 'next/image'
 import { business } from '@/data/business'
 
 export default function Nav() {
@@ -36,19 +37,15 @@ export default function Nav() {
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 cursor-pointer">
-          <div
-            className="w-8 h-8 rounded-full flex items-center justify-center text-white font-black text-sm"
-            style={{ backgroundColor: 'var(--color-cta)' }}
-          >
-            C
-          </div>
-          <span
-            className="font-black uppercase tracking-tight text-white text-lg leading-none"
-            style={{ fontFamily: 'var(--font-heading)' }}
-          >
-            Cesar&apos;s Lawns
-          </span>
+        <a href="#" className="flex items-center cursor-pointer">
+          <Image
+            src="/cesars-lawns-services-logo.jpeg"
+            alt="Cesar's Lawns Services logo"
+            width={140}
+            height={56}
+            className="h-10 w-auto rounded-lg"
+            priority
+          />
         </a>
 
         {/* Desktop links */}

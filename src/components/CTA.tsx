@@ -2,11 +2,20 @@
 
 import { motion } from 'framer-motion'
 import { Phone, ArrowRight } from 'lucide-react'
+import Image from 'next/image'
 import { business } from '@/data/business'
 
 export default function CTA() {
   return (
-    <section className="py-20 px-6" style={{ backgroundColor: 'var(--color-cta)' }}>
+    <section className="py-20 px-6 relative overflow-hidden" style={{ backgroundColor: 'var(--color-cta)' }}>
+      <div className="absolute inset-0">
+        <Image
+          src="/garden-cleanup-landscaping-porirua.jpeg"
+          alt="Cesar's Lawns Services garden cleanup Porirua"
+          fill
+          className="object-cover opacity-20"
+        />
+      </div>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

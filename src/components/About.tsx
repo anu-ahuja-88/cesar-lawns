@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { MapPin, Phone } from 'lucide-react'
+import Image from 'next/image'
 import { business } from '@/data/business'
 
 export default function About() {
@@ -50,7 +51,7 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* Visual side — bold stat card */}
+          {/* Visual side — real photo */}
           <motion.div
             initial={{ opacity: 0, x: 32 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -58,48 +59,30 @@ export default function About() {
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="relative"
           >
-            <div
-              className="rounded-3xl p-10 relative overflow-hidden"
-              style={{ backgroundColor: 'var(--color-primary)' }}
-            >
-              {/* Decoration blob */}
-              <div
-                className="absolute -top-12 -right-12 w-48 h-48 rounded-full opacity-20"
-                style={{ backgroundColor: 'var(--color-cta)' }}
+            <div className="relative rounded-3xl overflow-hidden aspect-[4/3]">
+              <Image
+                src="/lawn-care-team-porirua.jpeg"
+                alt="Cesar's Lawns Services team at work in Porirua Wellington"
+                fill
+                className="object-cover"
               />
-              <div
-                className="absolute -bottom-8 -left-8 w-32 h-32 rounded-full opacity-15"
-                style={{ backgroundColor: 'var(--color-secondary)' }}
-              />
-
-              <div className="relative">
-                <div
-                  className="text-8xl font-black mb-2 leading-none"
-                  style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-cta)' }}
-                >
-                  5★
-                </div>
-                <p className="text-white/80 text-lg mb-8">Google Rating — Porirua&apos;s most trusted lawn crew</p>
-
-                <div className="border-t border-white/15 pt-8">
-                  <p className="text-white/60 text-sm leading-relaxed italic">
-                    &ldquo;Very happy with their work, would recommend them.&rdquo;
-                  </p>
-                  <p className="text-white/40 text-xs mt-2">— Gail Murphy, Porirua</p>
-                </div>
+              <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(28,92,55,0.55) 0%, transparent 55%)' }} />
+              <div className="absolute bottom-6 left-6 right-6">
+                <p className="text-white/90 text-sm font-medium italic">
+                  &ldquo;Very happy with their work, would recommend them.&rdquo;
+                </p>
+                <p className="text-white/60 text-xs mt-1">— Gail Murphy, Porirua</p>
               </div>
             </div>
 
-            {/* Floating chip */}
+            {/* Floating rating chip */}
             <motion.div
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute -bottom-5 -left-5 px-4 py-3 rounded-2xl shadow-xl"
+              className="absolute -top-4 -right-4 px-4 py-3 rounded-2xl shadow-xl"
               style={{ backgroundColor: 'var(--color-cta)' }}
             >
-              <p className="text-xs font-black uppercase tracking-wide" style={{ color: '#141C14' }}>
-                We Cover Those Areas
-              </p>
+              <p className="text-sm font-black" style={{ color: '#141C14' }}>5★ Google</p>
             </motion.div>
           </motion.div>
         </div>

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Phone, ArrowRight } from 'lucide-react'
+import Image from 'next/image'
 import { business } from '@/data/business'
 
 const containerVariants = {
@@ -60,7 +61,7 @@ export default function Hero() {
       </div>
 
       <motion.div
-        className="relative max-w-6xl mx-auto w-full"
+        className="relative max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -148,6 +149,43 @@ export default function Hero() {
             </span>
           ))}
         </motion.div>
+      </motion.div>
+
+      {/* Right — photo panel (desktop only) */}
+      <motion.div
+        className="hidden lg:flex flex-col gap-4 relative"
+        initial={{ opacity: 0, x: 40 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
+      >
+        <div className="relative rounded-3xl overflow-hidden aspect-[4/3]">
+          <Image
+            src="/lawn-care-team-porirua.jpeg"
+            alt="Cesar's Lawns Services team working in Porirua Wellington"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(28,92,55,0.4) 0%, transparent 60%)' }} />
+        </div>
+        <div className="grid grid-cols-2 gap-4">
+          <div className="relative rounded-2xl overflow-hidden aspect-square">
+            <Image
+              src="/hedge-cutting-service-porirua.jpeg"
+              alt="Hedge cutting service Cesar's Lawns Porirua"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="relative rounded-2xl overflow-hidden aspect-square">
+            <Image
+              src="/hedge-trimmed-result-porirua.jpeg"
+              alt="Neatly trimmed hedge result Cesar's Lawns Porirua"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
       </motion.div>
     </section>
   )

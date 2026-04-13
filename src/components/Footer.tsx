@@ -1,6 +1,7 @@
 'use client'
 
 import { Phone, Mail, MapPin } from 'lucide-react'
+import Image from 'next/image'
 import { business } from '@/data/business'
 
 export default function Footer() {
@@ -12,22 +13,17 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div
-                className="w-8 h-8 rounded-full flex items-center justify-center text-white font-black text-sm flex-shrink-0"
-                style={{ backgroundColor: 'var(--color-cta)' }}
-              >
-                C
-              </div>
-              <span
-                className="font-black uppercase tracking-tight text-white text-lg leading-none"
-                style={{ fontFamily: 'var(--font-heading)' }}
-              >
-                Cesar&apos;s Lawns Services
-              </span>
+            <div className="mb-4">
+              <Image
+                src="/cesars-lawns-services-logo.jpeg"
+                alt="Cesar's Lawns Services logo"
+                width={160}
+                height={64}
+                className="h-12 w-auto rounded-lg"
+              />
             </div>
             <p className="text-sm leading-relaxed">
-              Lawn mowing, hedge trimming, weeding, and more — serving Porirua.
+              Lawn mowing, hedge trimming, weeding, and more. Serving Tawa, Whitby, Plimmerton and surrounding areas.
             </p>
           </div>
 
