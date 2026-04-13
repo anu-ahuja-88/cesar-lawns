@@ -15,11 +15,11 @@ export default function Footer() {
           <div>
             <div className="mb-4">
               <Image
-                src="/cesars-lawns-services-logo-removebg-preview.png"
+                src="/cesars-lawns-services-logo.jpeg"
                 alt="Cesar's Lawns Services logo"
                 width={160}
                 height={64}
-                className="h-12 w-auto"
+                className="h-12 w-auto rounded-lg"
               />
             </div>
             <p className="text-sm leading-relaxed">

@@ -40,11 +40,11 @@ export default function Nav() {
         {/* Logo */}
         <a href="#" className="flex items-center cursor-pointer">
           <Image
-            src="/cesars-lawns-services-logo-removebg-preview.png"
+            src="/cesars-lawns-services-logo.jpeg"
             alt="Cesar's Lawns Services logo"
             width={200}
             height={80}
-            className="h-16 w-auto"
+            className="h-16 w-auto rounded-lg"
             priority
           />
         </a>
