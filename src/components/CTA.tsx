@@ -2,19 +2,15 @@
 
 import { motion } from 'framer-motion'
 import { Phone, ArrowRight } from 'lucide-react'
-import Image from 'next/image'
 import { business } from '@/data/business'
 
 export default function CTA() {
   return (
     <section className="py-20 px-6 relative overflow-hidden" style={{ backgroundColor: 'var(--color-cta)' }}>
-      <div className="absolute inset-0">
-        <Image
-          src="/garden-cleanup-landscaping-porirua.jpeg"
-          alt="Cesar's Lawns Services garden cleanup Porirua"
-          fill
-          className="object-cover opacity-20"
-        />
+      {/* Subtle organic shapes for depth */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full opacity-20" style={{ backgroundColor: '#141C14' }} />
+        <div className="absolute -bottom-16 -left-16 w-48 h-48 rounded-full opacity-15" style={{ backgroundColor: '#141C14' }} />
       </div>
       <motion.div
         initial={{ opacity: 0, y: 20 }}

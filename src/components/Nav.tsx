@@ -18,6 +18,7 @@ export default function Nav() {
 
   const links = [
     { label: 'Services', href: '#services' },
+    { label: 'Our Work', href: '#gallery' },
     { label: 'About', href: '#about' },
     { label: 'Reviews', href: '#testimonials' },
     { label: 'Contact', href: '#quote' },
@@ -39,11 +40,11 @@ export default function Nav() {
         {/* Logo */}
         <a href="#" className="flex items-center cursor-pointer">
           <Image
-            src="/cesars-lawns-services-logo.jpeg"
+            src="/cesars-lawns-services-logo-removebg-preview.png"
             alt="Cesar's Lawns Services logo"
             width={140}
             height={56}
-            className="h-10 w-auto rounded-lg"
+            className="h-10 w-auto"
             priority
           />
         </a>

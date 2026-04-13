@@ -66,126 +66,130 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
       >
-        {/* Badge */}
-        {business.hero.badge && (
-          <motion.div variants={itemVariants} className="mb-6">
-            <span
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-wide"
-              style={{ backgroundColor: 'rgba(125, 199, 68, 0.15)', color: 'var(--color-cta)', border: '1px solid rgba(125, 199, 68, 0.3)' }}
+        {/* Left — text content */}
+        <div className="flex flex-col">
+          {/* Badge */}
+          {business.hero.badge && (
+            <motion.div variants={itemVariants} className="mb-6">
+              <span
+                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-wide"
+                style={{ backgroundColor: 'rgba(125, 199, 68, 0.15)', color: 'var(--color-cta)', border: '1px solid rgba(125, 199, 68, 0.3)' }}
+              >
+                {business.hero.badge}
+              </span>
+            </motion.div>
+          )}
+
+          {/* Main headline with cycling word */}
+          <motion.div variants={itemVariants}>
+            <h1
+              className="text-white text-5xl sm:text-7xl lg:text-[80px] font-black uppercase leading-none tracking-tight mb-4"
+              style={{ fontFamily: 'var(--font-heading)' }}
             >
-              {business.hero.badge}
-            </span>
+              Porirua&apos;s
+              <br />
+              <span className="flex items-baseline gap-4 flex-wrap">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={wordIndex}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                    style={{ color: 'var(--color-cta)', display: 'inline-block' }}
+                  >
+                    {words[wordIndex]}
+                  </motion.span>
+                </AnimatePresence>
+                <span>Crew</span>
+              </span>
+            </h1>
           </motion.div>
-        )}
 
-        {/* Main headline with cycling word */}
-        <motion.div variants={itemVariants}>
-          <h1
-            className="text-white text-5xl sm:text-7xl lg:text-[90px] font-black uppercase leading-none tracking-tight mb-4"
-            style={{ fontFamily: 'var(--font-heading)' }}
+          {/* Subheadline */}
+          <motion.p
+            variants={itemVariants}
+            className="text-white/75 text-lg sm:text-xl max-w-xl mb-10 leading-relaxed"
           >
-            Porirua&apos;s
-            <br />
-            <span className="flex items-baseline gap-4 flex-wrap">
-              <AnimatePresence mode="wait">
-                <motion.span
-                  key={wordIndex}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                  style={{ color: 'var(--color-cta)', display: 'inline-block' }}
-                >
-                  {words[wordIndex]}
-                </motion.span>
-              </AnimatePresence>
-              <span>Crew</span>
-            </span>
-          </h1>
-        </motion.div>
+            {business.hero.subheadline}
+          </motion.p>
 
-        {/* Subheadline */}
-        <motion.p
-          variants={itemVariants}
-          className="text-white/75 text-lg sm:text-xl max-w-xl mb-10 leading-relaxed"
-        >
-          {business.hero.subheadline}
-        </motion.p>
-
-        {/* CTAs */}
-        <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
-          <motion.a
-            href="#quote"
-            whileHover={{ scale: 1.04, y: -2 }}
-            whileTap={{ scale: 0.97 }}
-            transition={{ type: 'spring', stiffness: 400, damping: 18 }}
-            className="flex items-center gap-2 px-7 py-4 rounded-full font-bold text-base cursor-pointer"
-            style={{ backgroundColor: 'var(--color-cta)', color: '#141C14' }}
-          >
-            {business.hero.ctaPrimary}
-            <ArrowRight size={18} />
-          </motion.a>
-          <motion.a
-            href={`tel:${business.phone.replace(/\s/g, '')}`}
-            whileHover={{ scale: 1.03, y: -1 }}
-            whileTap={{ scale: 0.97 }}
-            transition={{ type: 'spring', stiffness: 400, damping: 18 }}
-            className="flex items-center gap-2 px-7 py-4 rounded-full font-bold text-base cursor-pointer border-2 border-white/30 text-white hover:border-white/60 transition-colors"
-          >
-            <Phone size={16} />
-            {business.phone}
-          </motion.a>
-        </motion.div>
-
-        {/* Service tags */}
-        <motion.div variants={itemVariants} className="flex flex-wrap gap-2 mt-10">
-          {['We Cover Those Areas', 'Lawn Mowing', 'Hedge Trimming', 'Weeding', 'Rubbish Removal'].map((tag) => (
-            <span
-              key={tag}
-              className="px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wide text-white/60"
-              style={{ backgroundColor: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}
+          {/* CTAs */}
+          <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
+            <motion.a
+              href="#quote"
+              whileHover={{ scale: 1.04, y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 18 }}
+              className="flex items-center gap-2 px-7 py-4 rounded-full font-bold text-base cursor-pointer"
+              style={{ backgroundColor: 'var(--color-cta)', color: '#141C14' }}
             >
-              {tag}
-            </span>
-          ))}
-        </motion.div>
-      </motion.div>
+              {business.hero.ctaPrimary}
+              <ArrowRight size={18} />
+            </motion.a>
+            <motion.a
+              href={`tel:${business.phone.replace(/\s/g, '')}`}
+              whileHover={{ scale: 1.03, y: -1 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 18 }}
+              className="flex items-center gap-2 px-7 py-4 rounded-full font-bold text-base cursor-pointer border-2 border-white/30 text-white hover:border-white/60 transition-colors"
+            >
+              <Phone size={16} />
+              {business.phone}
+            </motion.a>
+          </motion.div>
 
-      {/* Right — photo panel (desktop only) */}
-      <motion.div
-        className="hidden lg:flex flex-col gap-4 relative"
-        initial={{ opacity: 0, x: 40 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
-      >
-        <div className="relative rounded-3xl overflow-hidden aspect-[4/3]">
-          <Image
-            src="/lawn-care-team-porirua.jpeg"
-            alt="Cesar's Lawns Services team working in Porirua Wellington"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(28,92,55,0.4) 0%, transparent 60%)' }} />
+          {/* Service tags */}
+          <motion.div variants={itemVariants} className="flex flex-wrap gap-2 mt-10">
+            {['Lawn Mowing', 'Hedge Trimming', 'Weeding', 'Garden Cleanup', 'Rubbish Removal'].map((tag) => (
+              <span
+                key={tag}
+                className="px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wide text-white/60"
+                style={{ backgroundColor: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}
+              >
+                {tag}
+              </span>
+            ))}
+          </motion.div>
         </div>
-        <div className="grid grid-cols-2 gap-4">
-          <div className="relative rounded-2xl overflow-hidden aspect-square">
+
+        {/* Right — photo panel (desktop only) */}
+        <motion.div
+          className="hidden lg:flex flex-col gap-4"
+          variants={itemVariants}
+        >
+          <div className="relative rounded-3xl overflow-hidden" style={{ aspectRatio: '4/3' }}>
             <Image
-              src="/hedge-cutting-service-porirua.jpeg"
-              alt="Hedge cutting service Cesar's Lawns Porirua"
+              src="/lawn-care-team-porirua.jpeg"
+              alt="Cesar's Lawns Services team working in Porirua Wellington"
               fill
+              sizes="(max-width: 1024px) 0px, 45vw"
               className="object-cover"
+              priority
             />
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(28,92,55,0.4) 0%, transparent 60%)' }} />
           </div>
-          <div className="relative rounded-2xl overflow-hidden aspect-square">
-            <Image
-              src="/hedge-trimmed-result-porirua.jpeg"
-              alt="Neatly trimmed hedge result Cesar's Lawns Porirua"
-              fill
-              className="object-cover"
-            />
+          <div className="grid grid-cols-2 gap-4">
+            <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: '1/1' }}>
+              <Image
+                src="/hedge-cutting-service-porirua.jpeg"
+                alt="Hedge cutting service Cesar's Lawns Porirua"
+                fill
+                sizes="(max-width: 1024px) 0px, 22vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: '1/1' }}>
+              <Image
+                src="/hedge-trimmed-result-porirua.jpeg"
+                alt="Neatly trimmed hedge result Cesar's Lawns Porirua"
+                fill
+                sizes="(max-width: 1024px) 0px, 22vw"
+                className="object-cover"
+              />
+            </div>
           </div>
-        </div>
+        </motion.div>
       </motion.div>
     </section>
   )

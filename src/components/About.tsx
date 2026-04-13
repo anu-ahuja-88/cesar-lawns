@@ -61,9 +61,10 @@ export default function About() {
           >
             <div className="relative rounded-3xl overflow-hidden aspect-[4/3]">
               <Image
-                src="/lawn-care-team-porirua.jpeg"
-                alt="Cesar's Lawns Services team at work in Porirua Wellington"
+                src="/garden-maintenance-porirua.jpeg"
+                alt="Garden maintenance work Cesar's Lawns Services Porirua Wellington"
                 fill
+                sizes="(max-width: 1024px) 100vw, 45vw"
                 className="object-cover"
               />
               <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(28,92,55,0.55) 0%, transparent 55%)' }} />
