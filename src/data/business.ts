@@ -76,17 +76,17 @@ export const business: BusinessData = {
   name: "Cesar's Lawns Services",
   slug: "cesar-lawns",
   tagline: "Porirua's lawn and garden crew",
-  description: "Reliable lawn mowing, hedge trimming, weeding, and garden maintenance across Porirua.",
+  description: "Reliable lawn mowing, hedge trimming, weeding, and garden maintenance across Porirua and surrounding suburbs.",
   industry: "Lawn & Garden Services",
   location: "Porirua, New Zealand",
 
   phone: "022 187 2853",
-  email: "cesarslawnsservices@gmail.com",
+  email: "info@cesarslawnsservices.co.nz",
   address: "19 Beauzami Crescent, Ascot Park, Porirua 5024",
 
   hero: {
     headline: "Porirua's Lawn & Garden Crew",
-    subheadline: "We keep your section looking sharp all year round. Free quotes, reliable crew, Porirua only.",
+    subheadline: "We keep your section looking sharp all year round. Free quotes, reliable crew across Porirua and surrounding areas.",
     ctaPrimary: "Get Your Free Quote",
     ctaSecondary: "Our Services",
     badge: "5-Star Rated in Porirua",
@@ -176,7 +176,7 @@ export const business: BusinessData = {
     },
   ],
 
-  serviceAreas: ["Porirua"],
+  serviceAreas: ["Tawa", "Tītahi Bay", "Elsdon", "Ranui", "Cannons Creek", "Waitangirua", "Ascot Park", "Whitby", "Aotea", "Plimmerton", "Papakowhai"],
 
   design: {
     primaryColor: "#1C5C37",
@@ -190,10 +190,10 @@ export const business: BusinessData = {
 
   seo: {
     title: "Lawn Mowing Porirua | Cesar's Lawns Services",
-    description: "Reliable lawn mowing, hedge trimming, weeding and garden services in Porirua. 5-star rated local crew. Call 022 187 2853 for a free quote.",
-    keywords: "lawn mowing porirua, lawn care porirua, hedge trimming porirua, garden services porirua, weed spray porirua, rubbish removal porirua, cesar lawns porirua, lawn mowing ascot park",
+    description: "Reliable lawn mowing, hedge trimming, weeding and garden services across Porirua, Tawa, Whitby, Plimmerton and surrounding suburbs. Call 022 187 2853 for a free quote.",
+    keywords: "lawn mowing porirua, lawn care porirua, hedge trimming porirua, garden services porirua, weed spray porirua, rubbish removal porirua, cesar lawns porirua, lawn mowing tawa, lawn mowing whitby, lawn mowing plimmerton, lawn mowing ascot park, garden services tawa, lawn mowing titahi bay",
   },
 
-  clientEmail: "cesarslawnsservices@gmail.com",
+  clientEmail: "info@cesarslawnsservices.co.nz",
   clientName: "Cesar",
 }
