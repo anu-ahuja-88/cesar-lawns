@@ -29,7 +29,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative min-h-screen flex flex-col justify-center pt-24 pb-20 px-6 overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-center pt-28 pb-20 px-6 overflow-hidden"
       style={{ backgroundColor: 'var(--color-primary)' }}
     >
       {/* Organic background shapes */}
