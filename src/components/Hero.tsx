@@ -138,7 +138,7 @@ export default function Hero() {
 
         {/* Service tags */}
         <motion.div variants={itemVariants} className="flex flex-wrap gap-2 mt-10">
-          {['Porirua Only', 'Lawn Mowing', 'Hedge Trimming', 'Weeding', 'Rubbish Removal'].map((tag) => (
+          {['We Cover Those Areas', 'Lawn Mowing', 'Hedge Trimming', 'Weeding', 'Rubbish Removal'].map((tag) => (
             <span
               key={tag}
               className="px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wide text-white/60"

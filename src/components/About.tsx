@@ -98,7 +98,7 @@ export default function About() {
               style={{ backgroundColor: 'var(--color-cta)' }}
             >
               <p className="text-xs font-black uppercase tracking-wide" style={{ color: '#141C14' }}>
-                Porirua Only
+                We Cover Those Areas
               </p>
             </motion.div>
           </motion.div>

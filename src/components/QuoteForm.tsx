@@ -52,7 +52,7 @@ export default function QuoteForm() {
               Get Your Free<br />Quote Today
             </h2>
             <p className="text-white/65 text-lg leading-relaxed mb-8">
-              Tell us what you need and we&apos;ll get back to you fast. Porirua only — {business.phone}.
+              Tell us what you need and we&apos;ll get back to you fast. We cover those areas — {business.phone}.
             </p>
 
             <div className="space-y-3">

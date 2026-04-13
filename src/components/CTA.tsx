@@ -21,7 +21,7 @@ export default function CTA() {
           Ready for a Tidy<br />Section?
         </h2>
         <p className="text-black/60 text-lg mb-10">
-          Call us or get a free quote online — Porirua only.
+          Call us or get a free quote online — we cover those areas.
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
           <motion.a
