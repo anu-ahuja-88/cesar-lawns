@@ -40,7 +40,7 @@ export default function Hero() {
         />
         {/* Medium blob bottom-left */}
         <div
-          className="absolute -bottom-48 -left-24 w-[500px] h-[500px] rounded-full"
+          className="absolute -bottom-72 -left-48 w-[500px] h-[500px] rounded-full"
           style={{ backgroundColor: 'var(--color-primary)' }}
         />
         {/* Subtle grid lines */}
