@@ -112,6 +112,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href={business.design.googleFontsUrl} rel="stylesheet" />
         <style dangerouslySetInnerHTML={{ __html: cssVars }} />
+        <meta name="google-site-verification" content="C7SgVGSE2fBpllZh8Cs2l8K6NR08asHiZZ6Lj5BJAZA" />
         <link rel="manifest" href="/site.webmanifest" />
         <script
           type="application/ld+json"
