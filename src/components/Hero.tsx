@@ -78,8 +78,7 @@ export default function Hero() {
           <motion.div variants={itemVariants}>
             <h1
               className="text-5xl sm:text-7xl lg:text-[80px] font-black uppercase leading-none tracking-tight mb-4"
-              style={{ color: 'var(--color-primary)' }}
-              style={{ fontFamily: 'var(--font-heading)' }}
+              style={{ color: 'var(--color-primary)', fontFamily: 'var(--font-heading)' }}
             >
               Porirua&apos;s
               <br />
