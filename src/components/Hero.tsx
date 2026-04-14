@@ -160,13 +160,14 @@ export default function Hero() {
         >
           <div
             className="relative rounded-3xl overflow-hidden w-full h-[600px]"
+            style={{ backgroundColor: 'var(--color-primary)' }}
           >
             <Image
               src="/lawn-care-team-porirua.jpeg"
               alt="Cesar's Lawns Services team working in Porirua Wellington"
               fill
-              sizes="(max-width: 1024px) 0px, 45vw"
-              className="object-cover object-center"
+              sizes="45vw"
+              style={{ objectFit: 'cover', objectPosition: 'center' }}
               priority
             />
             {/* Subtle bottom gradient for text legibility */}

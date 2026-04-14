@@ -27,11 +27,16 @@ export default function QuoteForm() {
     e.preventDefault()
     setLoading(true)
     setError(null)
+
+    // Honeypot check — bots fill this, humans never see it
+    const honeypot = ((e.currentTarget as HTMLFormElement).elements.namedItem('website') as HTMLInputElement)?.value ?? ''
+    if (honeypot) { setSubmitted(true); setLoading(false); return }
+
     try {
       const res = await fetch('/api/quote', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, honeypot }),
       })
       if (!res.ok) throw new Error('Failed to send')
       setSubmitted(true)
@@ -127,6 +132,15 @@ export default function QuoteForm() {
                     onSubmit={handleSubmit}
                     className="flex flex-col gap-4"
                   >
+                    {/* Honeypot — hidden from real users, bots fill this in */}
+                    <input
+                      type="text"
+                      name="website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      aria-hidden="true"
+                      style={{ position: 'absolute', left: '-9999px', top: 'auto', width: '1px', height: '1px', overflow: 'hidden' }}
+                    />
                     <div>
                       <label className="block text-white/60 text-xs font-medium uppercase tracking-wide mb-1.5">Your Name</label>
                       <input
