@@ -159,8 +159,7 @@ export default function Hero() {
           variants={itemVariants}
         >
           <div
-            className="relative rounded-3xl overflow-hidden w-full"
-            style={{ aspectRatio: '3/4', maxHeight: '600px' }}
+            className="relative rounded-3xl overflow-hidden w-full h-[600px]"
           >
             <Image
               src="/lawn-care-team-porirua.jpeg"
