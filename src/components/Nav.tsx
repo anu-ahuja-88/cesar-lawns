@@ -31,9 +31,9 @@ export default function Nav() {
       transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
-        backgroundColor: scrolled ? 'rgba(28, 92, 55, 0.97)' : 'rgba(255,255,255,0.95)',
+        backgroundColor: 'rgba(255,255,255,0.97)',
         backdropFilter: 'blur(12px)',
-        boxShadow: scrolled ? '0 2px 20px rgba(0,0,0,0.15)' : '0 1px 0 rgba(28,92,55,0.08)',
+        boxShadow: scrolled ? '0 2px 16px rgba(0,0,0,0.1)' : '0 1px 0 rgba(28,92,55,0.08)',
       }}
     >
       <div className="max-w-6xl mx-auto px-6 h-28 flex items-center justify-between">
@@ -56,7 +56,7 @@ export default function Nav() {
               key={link.href}
               href={link.href}
               className="text-sm font-medium transition-colors duration-150 cursor-pointer"
-                style={{ color: scrolled ? 'rgba(255,255,255,0.85)' : 'var(--color-primary)' }}
+                style={{ color: 'var(--color-primary)' }}
             >
               {link.label}
             </a>
@@ -77,7 +77,7 @@ export default function Nav() {
         {/* Mobile menu button */}
         <button
           className="md:hidden cursor-pointer p-1"
-            style={{ color: scrolled ? 'white' : 'var(--color-primary)' }}
+            style={{ color: 'var(--color-primary)' }}
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
