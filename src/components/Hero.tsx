@@ -29,31 +29,25 @@ export default function Hero() {
 
   return (
     <section
-      className="relative min-h-screen flex flex-col justify-center pt-28 pb-20 px-6 overflow-hidden"
-      style={{ backgroundColor: 'var(--color-primary)' }}
+      className="relative min-h-screen flex flex-col justify-center pt-28 pb-20 px-6 overflow-hidden bg-white"
     >
       {/* Organic background shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Large blob top-right */}
         <div
-          className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full opacity-20"
-          style={{ backgroundColor: 'var(--color-secondary)' }}
+          className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full opacity-10"
+          style={{ backgroundColor: 'var(--color-primary)' }}
         />
         {/* Medium blob bottom-left */}
         <div
-          className="absolute -bottom-48 -left-24 w-[500px] h-[500px] rounded-full opacity-15"
-          style={{ backgroundColor: 'var(--color-cta)' }}
-        />
-        {/* Small accent dot */}
-        <div
-          className="absolute top-1/3 right-1/4 w-24 h-24 rounded-full opacity-30"
+          className="absolute -bottom-48 -left-24 w-[500px] h-[500px] rounded-full opacity-8"
           style={{ backgroundColor: 'var(--color-cta)' }}
         />
         {/* Subtle grid lines */}
-        <svg className="absolute inset-0 w-full h-full opacity-5" xmlns="http://www.w3.org/2000/svg">
+        <svg className="absolute inset-0 w-full h-full opacity-[0.04]" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="0.5" />
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1C5C37" strokeWidth="0.5" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#grid)" />
@@ -73,7 +67,7 @@ export default function Hero() {
             <motion.div variants={itemVariants} className="mb-6">
               <span
                 className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-wide"
-                style={{ backgroundColor: 'rgba(125, 199, 68, 0.15)', color: 'var(--color-cta)', border: '1px solid rgba(125, 199, 68, 0.3)' }}
+                style={{ backgroundColor: 'rgba(125, 199, 68, 0.15)', color: '#2d7a1f', border: '1px solid rgba(125, 199, 68, 0.4)' }}
               >
                 {business.hero.badge}
               </span>
@@ -83,7 +77,8 @@ export default function Hero() {
           {/* Main headline with cycling word */}
           <motion.div variants={itemVariants}>
             <h1
-              className="text-white text-5xl sm:text-7xl lg:text-[80px] font-black uppercase leading-none tracking-tight mb-4"
+              className="text-5xl sm:text-7xl lg:text-[80px] font-black uppercase leading-none tracking-tight mb-4"
+              style={{ color: 'var(--color-primary)' }}
               style={{ fontFamily: 'var(--font-heading)' }}
             >
               Porirua&apos;s
@@ -109,7 +104,8 @@ export default function Hero() {
           {/* Subheadline */}
           <motion.p
             variants={itemVariants}
-            className="text-white/75 text-lg sm:text-xl max-w-xl mb-10 leading-relaxed"
+            className="text-lg sm:text-xl max-w-xl mb-10 leading-relaxed"
+            style={{ color: 'var(--color-primary)', opacity: 0.75 }}
           >
             {business.hero.subheadline}
           </motion.p>
@@ -132,7 +128,8 @@ export default function Hero() {
               whileHover={{ scale: 1.03, y: -1 }}
               whileTap={{ scale: 0.97 }}
               transition={{ type: 'spring', stiffness: 400, damping: 18 }}
-              className="flex items-center gap-2 px-7 py-4 rounded-full font-bold text-base cursor-pointer border-2 border-white/30 text-white hover:border-white/60 transition-colors"
+              className="flex items-center gap-2 px-7 py-4 rounded-full font-bold text-base cursor-pointer border-2 transition-colors"
+              style={{ borderColor: 'var(--color-primary)', color: 'var(--color-primary)' }}
             >
               <Phone size={16} />
               {business.phone}
@@ -144,8 +141,8 @@ export default function Hero() {
             {['Lawn Mowing', 'Hedge Trimming', 'Weeding', 'Garden Cleanup', 'Rubbish Removal'].map((tag) => (
               <span
                 key={tag}
-                className="px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wide text-white/60"
-                style={{ backgroundColor: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}
+                className="px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wide"
+                style={{ backgroundColor: 'rgba(28,92,55,0.07)', border: '1px solid rgba(28,92,55,0.15)', color: 'var(--color-primary)' }}
               >
                 {tag}
               </span>
