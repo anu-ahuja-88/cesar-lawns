@@ -40,8 +40,8 @@ export default function Hero() {
         />
         {/* Medium blob bottom-left */}
         <div
-          className="absolute -bottom-48 -left-24 w-[500px] h-[500px] rounded-full opacity-8"
-          style={{ backgroundColor: 'var(--color-cta)' }}
+          className="absolute -bottom-48 -left-24 w-[500px] h-[500px] rounded-full opacity-20"
+          style={{ backgroundColor: 'var(--color-primary)' }}
         />
         {/* Subtle grid lines */}
         <svg className="absolute inset-0 w-full h-full opacity-[0.04]" xmlns="http://www.w3.org/2000/svg">
