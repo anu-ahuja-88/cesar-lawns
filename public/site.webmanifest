@@ -1,0 +1,16 @@
+{
+  "name": "Cesar's Lawns Services",
+  "short_name": "Cesar's Lawns",
+  "description": "Reliable lawn mowing, hedge trimming, weeding and garden services across Porirua and surrounding suburbs.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#1C5C37",
+  "icons": [
+    {
+      "src": "/cesars-lawns-services-logo-removebg-preview.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}

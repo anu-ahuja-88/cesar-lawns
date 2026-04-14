@@ -67,10 +67,10 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="mt-4 pt-4 border-t border-white/10 text-xs">
-              <span>Service area: </span>
-              {business.serviceAreas.join(', ')}
-            </div>
+            <address className="not-italic mt-4 pt-4 border-t border-white/10 text-xs">
+              {business.name} — Porirua, New Zealand<br />
+              Serving {business.serviceAreas.join(' · ')}
+            </address>
           </div>
         </div>
 

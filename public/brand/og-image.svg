@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#1C5C37"/>
+  <!-- Right accent -->
+  <rect x="780" y="0" width="420" height="630" fill="#163F28"/>
+  <!-- Lime accent bar -->
+  <rect x="0" y="560" width="1200" height="70" fill="#7DC744"/>
+  <!-- Logo placeholder circle -->
+  <circle cx="900" cy="315" r="180" fill="#24703F" opacity="0.6"/>
+  <!-- Business name -->
+  <text x="80" y="200" font-family="Arial Black, sans-serif" font-size="72" font-weight="900" fill="white" text-anchor="start">CESAR'S</text>
+  <text x="80" y="290" font-family="Arial Black, sans-serif" font-size="72" font-weight="900" fill="white" text-anchor="start">LAWNS</text>
+  <text x="80" y="380" font-family="Arial Black, sans-serif" font-size="72" font-weight="900" fill="white" text-anchor="start">SERVICES</text>
+  <!-- Tagline -->
+  <text x="80" y="440" font-family="Arial, sans-serif" font-size="28" fill="rgba(255,255,255,0.7)" text-anchor="start">Porirua's Lawn &amp; Garden Crew</text>
+  <!-- Badge -->
+  <rect x="80" y="470" width="340" height="48" rx="24" fill="#7DC744"/>
+  <text x="250" y="501" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#141C14" text-anchor="middle">FREE QUOTES · 022 187 2853</text>
+  <!-- Bottom text -->
+  <text x="600" y="600" font-family="Arial, sans-serif" font-size="20" fill="#141C14" text-anchor="middle" font-weight="700">cesarslawnsservices.co.nz</text>
+</svg>

@@ -79,6 +79,7 @@ export default function Gallery() {
                 alt={photo.alt}
                 fill
                 sizes="(max-width: 768px) 50vw, 33vw"
+                loading="lazy"
                 className="object-cover transition-transform duration-500 hover:scale-105"
               />
               <div className="absolute inset-0 bg-black/10 hover:bg-black/0 transition-colors duration-300" />

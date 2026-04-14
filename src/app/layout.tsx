@@ -2,16 +2,43 @@ import type { Metadata } from 'next'
 import { business } from '@/data/business'
 import './globals.css'
 
+const DOMAIN = 'https://cesarslawnsservices.co.nz'
+
 export const metadata: Metadata = {
+  metadataBase: new URL(DOMAIN),
   title: business.seo.title,
   description: business.seo.description,
   keywords: business.seo.keywords,
+  authors: [{ name: business.name }],
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: business.seo.title,
     description: business.seo.description,
     siteName: business.name,
     type: 'website',
     locale: 'en_NZ',
+    url: DOMAIN,
+    images: [
+      {
+        url: '/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: "Cesar's Lawns Services — Lawn Mowing Porirua",
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: business.seo.title,
+    description: business.seo.description,
+    images: ['/opengraph-image'],
+  },
+  other: {
+    'theme-color': '#1C5C37',
+    'geo.region': 'NZ-WGN',
+    'geo.placename': 'Porirua',
   },
 }
 
@@ -20,15 +47,39 @@ const localBusinessSchema = {
   '@type': 'LocalBusiness',
   name: business.name,
   description: business.seo.description,
+  image: `${DOMAIN}/opengraph-image`,
+  '@id': DOMAIN,
+  url: DOMAIN,
   telephone: business.phone,
   email: business.email,
+  priceRange: '$$',
   address: {
     '@type': 'PostalAddress',
-    addressLocality: business.location,
+    streetAddress: '19 Beauzami Crescent',
+    addressLocality: 'Ascot Park',
+    addressRegion: 'Porirua',
+    postalCode: '5024',
     addressCountry: 'NZ',
   },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: -41.1416,
+    longitude: 174.8508,
+  },
   areaServed: business.serviceAreas,
-  priceRange: '$$',
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    opens: '07:00',
+    closes: '18:00',
+  },
+}
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: business.name,
+  url: DOMAIN,
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -49,9 +100,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href={business.design.googleFontsUrl} rel="stylesheet" />
         <style dangerouslySetInnerHTML={{ __html: cssVars }} />
+        <link rel="manifest" href="/site.webmanifest" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
       </head>
       <body>{children}</body>

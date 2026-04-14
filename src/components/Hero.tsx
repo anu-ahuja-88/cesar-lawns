@@ -176,6 +176,7 @@ export default function Hero() {
                 alt="Hedge cutting service Cesar's Lawns Porirua"
                 fill
                 sizes="(max-width: 1024px) 0px, 22vw"
+                loading="lazy"
                 className="object-cover"
               />
             </div>
@@ -185,6 +186,7 @@ export default function Hero() {
                 alt="Neatly trimmed hedge result Cesar's Lawns Porirua"
                 fill
                 sizes="(max-width: 1024px) 0px, 22vw"
+                loading="lazy"
                 className="object-cover"
               />
             </div>
