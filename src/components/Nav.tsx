@@ -36,15 +36,15 @@ export default function Nav() {
         boxShadow: scrolled ? '0 2px 20px rgba(0,0,0,0.15)' : 'none',
       }}
     >
-      <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-6 h-24 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center cursor-pointer">
           <Image
-            src="/cesars-lawns-services-logo.jpeg"
+            src="/cesars-lawns-services-logo-removebg-preview.png"
             alt="Cesar's Lawns Services logo"
-            width={200}
-            height={80}
-            className="h-16 w-auto rounded-lg"
+            width={240}
+            height={96}
+            className="h-20 w-auto"
             priority
           />
         </a>
