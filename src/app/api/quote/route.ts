@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
 
     await resend.emails.send({
       from: "Cesar's Lawns Website <admin@verrawebstudio.co.nz>",
-      to: ['anuahuja502@gmail.com'],
+      to: ['cesarslawnsservices@gmail.com'],
       replyTo: email,
       subject: `New quote request — ${service} (${name})`,
       html: `
