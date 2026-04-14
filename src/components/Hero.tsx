@@ -153,42 +153,44 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Right — photo panel (desktop only) */}
+        {/* Right — single hero image (desktop only) */}
         <motion.div
-          className="hidden lg:flex flex-col gap-4"
+          className="hidden lg:block relative"
           variants={itemVariants}
         >
-          <div className="relative rounded-3xl overflow-hidden" style={{ aspectRatio: '4/3' }}>
+          <div
+            className="relative rounded-3xl overflow-hidden w-full"
+            style={{ aspectRatio: '3/4', maxHeight: '600px' }}
+          >
             <Image
               src="/lawn-care-team-porirua.jpeg"
               alt="Cesar's Lawns Services team working in Porirua Wellington"
               fill
               sizes="(max-width: 1024px) 0px, 45vw"
-              className="object-cover"
+              className="object-cover object-center"
               priority
             />
-            <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(28,92,55,0.4) 0%, transparent 60%)' }} />
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: '1/1' }}>
-              <Image
-                src="/hedge-cutting-service-porirua.jpeg"
-                alt="Hedge cutting service Cesar's Lawns Porirua"
-                fill
-                sizes="(max-width: 1024px) 0px, 22vw"
-                loading="lazy"
-                className="object-cover"
-              />
-            </div>
-            <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: '1/1' }}>
-              <Image
-                src="/hedge-trimmed-result-porirua.jpeg"
-                alt="Neatly trimmed hedge result Cesar's Lawns Porirua"
-                fill
-                sizes="(max-width: 1024px) 0px, 22vw"
-                loading="lazy"
-                className="object-cover"
-              />
+            {/* Subtle bottom gradient for text legibility */}
+            <div
+              className="absolute inset-0"
+              style={{ background: 'linear-gradient(to top, rgba(28,92,55,0.65) 0%, transparent 55%)' }}
+            />
+            {/* Rating badge — bottom left */}
+            <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
+              <div
+                className="flex items-center gap-3 px-4 py-3 rounded-2xl backdrop-blur-md"
+                style={{ backgroundColor: 'rgba(0,0,0,0.45)', border: '1px solid rgba(255,255,255,0.12)' }}
+              >
+                <div>
+                  <p className="text-white font-black text-xl leading-none">5.0 ★</p>
+                  <p className="text-white/60 text-xs mt-0.5">Google Rating</p>
+                </div>
+                <div className="w-px h-8 bg-white/20" />
+                <div>
+                  <p className="text-white font-black text-xl leading-none">Porirua</p>
+                  <p className="text-white/60 text-xs mt-0.5">Based locally</p>
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>
