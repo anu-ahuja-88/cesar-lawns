@@ -8,21 +8,38 @@ import { business } from '@/data/business'
 interface FormState {
   name: string
   phone: string
+  email: string
   service: string
   message: string
 }
 
 export default function QuoteForm() {
-  const [form, setForm] = useState<FormState>({ name: '', phone: '', service: '', message: '' })
+  const [form, setForm] = useState<FormState>({ name: '', phone: '', email: '', service: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    setSubmitted(true)
+    setLoading(true)
+    setError(null)
+    try {
+      const res = await fetch('/api/quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (!res.ok) throw new Error('Failed to send')
+      setSubmitted(true)
+    } catch {
+      setError('Something went wrong — please call us on ' + business.phone)
+    } finally {
+      setLoading(false)
+    }
   }
 
   const inputClass = "w-full px-4 py-3 rounded-xl border-2 text-sm outline-none transition-colors bg-white"
@@ -137,6 +154,19 @@ export default function QuoteForm() {
                       />
                     </div>
                     <div>
+                      <label className="block text-white/60 text-xs font-medium uppercase tracking-wide mb-1.5">Email</label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={form.email}
+                        onChange={handleChange}
+                        required
+                        placeholder="your@email.com"
+                        className={inputClass}
+                        style={inputStyle}
+                      />
+                    </div>
+                    <div>
                       <label className="block text-white/60 text-xs font-medium uppercase tracking-wide mb-1.5">Service Needed</label>
                       <select
                         name="service"
@@ -165,16 +195,20 @@ export default function QuoteForm() {
                         style={{ ...inputStyle, resize: 'none' }}
                       />
                     </div>
+                    {error && (
+                      <p className="text-red-400 text-sm text-center">{error}</p>
+                    )}
                     <motion.button
                       type="submit"
-                      whileHover={{ scale: 1.03, y: -2 }}
-                      whileTap={{ scale: 0.97 }}
+                      disabled={loading}
+                      whileHover={loading ? {} : { scale: 1.03, y: -2 }}
+                      whileTap={loading ? {} : { scale: 0.97 }}
                       transition={{ type: 'spring', stiffness: 400, damping: 18 }}
-                      className="flex items-center justify-center gap-2 w-full py-4 rounded-xl font-bold text-sm uppercase tracking-wide cursor-pointer mt-1"
+                      className="flex items-center justify-center gap-2 w-full py-4 rounded-xl font-bold text-sm uppercase tracking-wide cursor-pointer mt-1 disabled:opacity-60 disabled:cursor-not-allowed"
                       style={{ backgroundColor: 'var(--color-cta)', color: '#141C14' }}
                     >
                       <Send size={16} />
-                      Send Quote Request
+                      {loading ? 'Sending...' : 'Send Quote Request'}
                     </motion.button>
                   </motion.form>
                 )}
