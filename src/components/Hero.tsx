@@ -38,11 +38,6 @@ export default function Hero() {
           className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full opacity-10"
           style={{ backgroundColor: 'var(--color-primary)' }}
         />
-        {/* Medium blob bottom-left */}
-        <div
-          className="absolute -bottom-72 -left-48 w-[500px] h-[500px] rounded-full"
-          style={{ backgroundColor: 'var(--color-primary)' }}
-        />
         {/* Subtle grid lines */}
         <svg className="absolute inset-0 w-full h-full opacity-[0.04]" xmlns="http://www.w3.org/2000/svg">
           <defs>
