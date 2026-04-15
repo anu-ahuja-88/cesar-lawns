@@ -15,6 +15,11 @@ export interface BusinessData {
   address: string
   bookingUrl?: string
 
+  social?: {
+    facebook?: string
+    instagram?: string
+  }
+
   hero: {
     headline: string
     subheadline: string
@@ -83,6 +88,11 @@ export const business: BusinessData = {
   phone: "022 187 2853",
   email: "info@cesarslawnsservices.co.nz",
   address: "19 Beauzami Crescent, Ascot Park, Porirua 5024",
+
+  social: {
+    facebook: "https://www.facebook.com/CesarsLawns/",
+    instagram: "https://www.instagram.com/cesars_lawns_services/",
+  },
 
   hero: {
     headline: "Porirua's Lawn & Garden Crew",

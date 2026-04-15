@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
 
     await resend.emails.send({
       from: "Cesar's Lawns Website <admin@verrawebstudio.co.nz>",
-      to: ['cesarslawnsservices@gmail.com'],
+      to: ['info@cesarslawnsservices.co.nz'],
       replyTo: email,
       subject: `New quote request — ${service} (${name})`,
       html: `

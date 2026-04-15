@@ -1,6 +1,6 @@
 'use client'
 
-import { Phone, Mail, MapPin } from 'lucide-react'
+import { Phone, Mail, MapPin, Facebook, Instagram } from 'lucide-react'
 import Image from 'next/image'
 import { business } from '@/data/business'
 
@@ -71,6 +71,33 @@ export default function Footer() {
               {business.name} — Porirua, New Zealand<br />
               Serving {business.serviceAreas.join(' · ')}
             </address>
+
+            {business.social && (
+              <div className="flex gap-3 mt-4">
+                {business.social.facebook && (
+                  <a
+                    href={business.social.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                    className="hover:text-white transition-colors"
+                  >
+                    <Facebook size={18} />
+                  </a>
+                )}
+                {business.social.instagram && (
+                  <a
+                    href={business.social.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    className="hover:text-white transition-colors"
+                  >
+                    <Instagram size={18} />
+                  </a>
+                )}
+              </div>
+            )}
           </div>
         </div>
 
