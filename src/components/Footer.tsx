@@ -104,6 +104,15 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between gap-4 text-xs">
           <p>&copy; {year} {business.name}. All rights reserved.</p>
           <p>Lawn mowing Porirua · Hedge trimming Porirua · Garden services Porirua</p>
+          <a
+            href="https://verrawebstudio.co.nz"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 opacity-50 hover:opacity-100 transition-opacity"
+            style={{ color: 'rgba(255,255,255,0.55)' }}
+          >
+            Built by <span className="font-semibold text-white">Verra Web Studio</span>
+          </a>
         </div>
       </div>
     </footer>
